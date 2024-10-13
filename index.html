@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Владислав Харченко - Дизайн Одежды</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Подключение шрифтов Montserrat, Playfair Display и Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Подключение иконок Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/logo.png">
+</head>
+<body class="dark-theme">
+    <!-- Панель прогресса чтения -->
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- Хеадер (Шапка сайта) -->
+    <header id="header">
+        <div class="header-container">
+            <!-- Логотип -->
+            <a href="#home" class="logo">
+                <img src="assets/logo.png" alt="Логотип Владислава Харченко" width="40" height="40">
+            </a>
+
+            <!-- Меню Навигации -->
+            <nav class="nav">
+                <ul class="nav-menu">
+                    <li><a href="#home" data-lang="home">Главная</a></li>
+                    <li><a href="#about" data-lang="about">Обо мне</a></li>
+                    <li><a href="#collections" data-lang="collections">Образы</a></li>
+                    <li><a href="#services" data-lang="services">Мои Услуги</a></li>
+                    <li><a href="#testimonials" data-lang="testimonials">Отзывы</a></li>
+                    <li><a href="#news" data-lang="news">Новости</a></li>
+                    <li><a href="#contact" data-lang="contact">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <!-- Контактная информация и переключатель языка -->
+            <div class="header-right">
+                <div class="contact-info">
+                    <a href="tel:+37377521077">+373 (775) 210-77</a>
+                </div>
+                <div class="language-switcher">
+                    <button id="lang-ru" class="lang-btn active" aria-label="Русский">RU</button>
+                    <button id="lang-en" class="lang-btn" aria-label="English">EN</button>
+                </div>
+                <!-- Иконка гамбургера для мобильных устройств -->
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Боковое меню для мобильных устройств -->
+        <div class="side-menu" id="side-menu">
+            <a href="javascript:void(0)" class="close-modal" id="close-btn">&times;</a>
+            <ul class="side-nav-menu">
+                <li><a href="#home" data-lang="home">Главная</a></li>
+                <li><a href="#about" data-lang="about">Обо мне</a></li>
+                <li><a href="#collections" data-lang="collections">Коллекции</a></li>
+                <li><a href="#services" data-lang="services">Мои Услуги</a></li>
+                <li><a href="#testimonials" data-lang="testimonials">Отзывы</a></li>
+                <li><a href="#news" data-lang="news">Новости</a></li>
+                <li><a href="#contact" data-lang="contact">Контакты</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Главная секция -->
+    <section id="home" class="hero-section">
+        <h1 class="main-title" data-lang="main-title">Владислав Александрович Харченко</h1>
+        <img src="assets/vladislav.jpg" alt="Владислав Харченко" class="main-image">
+        <h2 class="subtitle" data-lang="subtitle">Дизайн одежды и создание уникальных образов</h2>
+        <a href="#collections" class="cta-button" data-lang="cta">Посмотреть коллекцию</a>
+        <!-- Анимированная стрелка для прокрутки -->
+        <a href="#about" class="scroll-down">
+            <span class="arrow"></span>
+        </a>
+    </section>
+
+    <!-- Блок "Обо мне" -->
+    <section id="about" class="about-section">
+        <h2 data-lang="about">Обо мне</h2>
+        <p data-lang="about-description">
+            Привет! Я Владислав Александрович Харченко, профессиональный дизайнер одежды с более чем 10-летним опытом работы в индустрии моды. Моя философия дизайна заключается в создании уникальных и функциональных образов, которые подчеркивают индивидуальность каждого клиента. Я стремлюсь сочетать современные тенденции с классическими элементами, чтобы создавать непревзойденные коллекции, которые вдохновляют и радуют.
+        </p>
+    </section>
+
+    <!-- Галерея Работ (Collections Gallery) -->
+    <section id="collections" class="collections-section">
+        <h2 data-lang="collections">Образы</h2>
+        <div class="gallery">
+            <!-- Карточка Коллекции -->
+            <div class="gallery-item card-animate">
+                <img src="assets/collection1.jpg" alt="Коллекция 1">
+                <div class="description" data-lang="collection-description-1">
+                    Материалы: - <br>
+                    Вдохновение: Япония, Ку-клукс-клан, дешёвые больше костюмы 
+                </div>
+                <button class="share-button" data-lang="share">Поделиться</button>
+            </div>
+            <!-- Повторите блок .gallery-item для остальных коллекций -->
+            <div class="gallery-item card-animate">
+                <img src="assets/collection2.jpg" alt="Коллекция 2">
+                <div class="description" data-lang="collection-description-2">
+                    Материалы: Лён, вискоза<br>
+                    Вдохновение: Архитектура и геометрия
+                </div>
+                <button class="share-button" data-lang="share">Поделиться</button>
+            </div>
+            <div class="gallery-item card-animate">
+                <img src="assets/collection3.jpg" alt="Коллекция 3">
+                <div class="description" data-lang="collection-description-3">
+                    Материалы: Кашемир, синтетика<br>
+                    Вдохновение: Искусство и культура
+                </div>
+                <button class="share-button" data-lang="share">Поделиться</button>
+            </div>
+<div class="gallery-item card-animate">
+                <img src="assets/collection4.jpg" alt="Коллекция 4">
+                <div class="description" data-lang="collection-description-4">
+                    Материалы: - <br>
+                    Вдохновение: Япония, Ку-клукс-клан, дешёвые больше костюмы 
+                </div>
+                <button class="share-button" data-lang="share">Поделиться</button>
+            </div>
+            <!-- Добавьте больше коллекций по необходимости -->
+        </div>
+    </section>
+
+    <!-- Секция "Мои Услуги" (Services) -->
+    <section id="services" class="services-section">
+        <h2 data-lang="services">Мои Услуги</h2>
+        <div class="services-container">
+            <!-- Карточка Услуги -->
+            <div class="service-card card-animate">
+                <i class="service-icon fas fa-tshirt"></i>
+                <h3 class="service-title" data-lang="service-title-1">Разработка Уникальных Образов</h3>
+                <p class="service-description" data-lang="service-description-1">
+                    Создаю индивидуальные образы, отражающие вашу личность и стиль. От идеи до реализации – полный цикл разработки дизайна одежды.
+                </p>
+                <button class="share-button" data-lang="share">Поделиться</button>
+            </div>
+            <!-- Повторите блок .service-card для остальных услуг -->
+            <div class="service-card card-animate">
+                <i class="service-icon fas fa-paint-brush"></i>
+                <h3 class="service-title" data-lang="service-title-2">Дизайн Коллекций</h3>
+                <p class="service-description" data-lang="service-description-2">
+                    Я не разрабатываю целостные коллекции одежды.
+                </p>
+                <button class="share-button" data-lang="share">Поделиться</button>
+            </div>
+            <div class="service-card card-animate">
+                <i class="service-icon fas fa-pencil-ruler"></i>
+                <h3 class="service-title" data-lang="service-title-3">Технический Чертеж</h3>
+                <p class="service-description" data-lang="service-description-3">
+                    Предоставляю детальные технические чертежи и спецификации для производства одежды, обеспечивая высокое качество конечного продукта.
+                </p>
+                <button class="share-button" data-lang="share">Поделиться</button>
+            </div>
+            <!-- Добавьте больше услуг по необходимости -->
+        </div>
+    </section>
+
+ <!-- Секция "Отзывы клиентов" (Testimonials) -->
+    <section id="testimonials" class="testimonials-section">
+        <h2 data-lang="testimonials">Отзывы клиентов</h2>
+        <div class="testimonials-container">
+            <!-- Карточка Отзыва -->
+            <div class="testimonial-card card-animate">
+                <img src="assets/client1.jpg" alt="Клиент 1" class="testimonial-photo">
+                <p class="testimonial-quote">
+                    "Владислав создал для меня невероятный аутфит, который превзошёл все ожидания. Профессионализм и креативность на высшем уровне!"
+                </p>
+                <p class="testimonial-author">- Бьянка Цензори</p>
+                <button class="share-button" data-lang="share">Поделиться</button>
+            </div>
+            <!-- Повторите блок .testimonial-card для остальных отзывов -->
+            <div class="testimonial-card card-animate">
+                <img src="assets/client2.jpg" alt="Клиент 2" class="testimonial-photo">
+                <p class="testimonial-quote">
+                    "Работа с Владиславом — истинное удовольствие. Его внимание к деталям и глубокое понимание потребностей клиента превращают сотрудничество в успех. Чмоки-чмоки."
+                </p>
+                <p class="testimonial-author">- Сергей Зверев</p>
+                <button class="share-button" data-lang="share">Поделиться</button>
+            </div>
+            <div class="testimonial-card card-animate">
+                <img src="assets/client3.jpg" alt="Клиент 3" class="testimonial-photo">
+                <p class="testimonial-quote">
+                    "Заебумба."
+                </p>
+                <p class="testimonial-author">- Егор Владов</p>
+                <button class="share-button" data-lang="share">Поделиться</button>
+            </div>
+            <!-- Добавьте больше отзывов по необходимости -->
+        </div>
+    </section>
+
+    <!-- Блок "Мои Клиенты" (Clients) -->
+    <section id="clients" class="clients-section">
+        <h2 data-lang="clients">Мои Клиенты</h2>
+        <div class="clients-gallery">
+            <!-- Логотип Клиента -->
+            <div class="client-logo card-animate">
+                <img src="assets/1.webp" alt="Клиент 1" class="testimonial-photo">
+            </div>
+            <!-- Повторите блок .client-logo для остальных клиентов -->
+            <div class="client-logo card-animate">
+                <img src="assets/2.webp" alt="Клиент 2" class="testimonial-photo">
+            </div>
+            <div class="client-logo card-animate">
+                <img src="assets/3.webp" alt="Клиент 3" class="testimonial-photo">
+            </div>
+            <div class="client-logo card-animate">
+                <img src="assets/4.webp" alt="Клиент 4" class="testimonial-photo">
+            </div>
+            <!-- Добавьте больше клиентов по необходимости -->
+        </div>
+    </section>
+
+    <!-- Блок "Цитаты и Вдохновение" (Quotes & Inspiration) -->
+    <section id="quotes" class="quotes-section">
+        <h2 data-lang="quotes">Цитаты и Вдохновение</h2>
+        <div class="quote card-animate">
+            <p data-lang="quote-1">"Шкибиди доп ес ес."</p>
+        </div>
+    </section>
+
+
+    <!-- Блок "Контакты" (Contact) -->
+    <section id="contact" class="contact-section">
+        <h2 data-lang="contact">Контакты</h2>
+        <form class="contact-form">
+            <label for="name" data-lang="contact-name">Имя</label>
+            <input type="text" id="name" name="name" required data-lang-placeholder="contact-name-placeholder" placeholder="Ваше имя">
+
+            <label for="email" data-lang="contact-email">Электронная почта</label>
+            <input type="email" id="email" name="email" required data-lang-placeholder="contact-email-placeholder" placeholder="Ваш email">
+
+            <label for="message" data-lang="contact-message">Сообщение</label>
+            <textarea id="message" name="message" rows="5" required data-lang-placeholder="contact-message-placeholder" placeholder="Ваше сообщение"></textarea>
+
+            <button type="submit" class="submit-button" data-lang="submit">Отправить</button>
+        </form>
+            <!-- Вставьте сюда ваш код для интеграции карты (например, Google Maps) -->
+        </div>
+        <!-- Иконки Социальных Сетей -->
+        <div class="social-links">
+            <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://pinterest.com/yourprofile" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+            <!-- Добавьте другие социальные сети по необходимости -->
+        </div>
+    </section>
+
+    <!-- Подвал (Footer) -->
+    <footer>
+        <p>&copy; 2024 Владислав Харченко. Все права защищены.</p>
+    </footer>
+
+    <!-- Плавающие Кнопки -->
+    <button class="floating-button" id="back-to-top" data-lang="back-to-top">⬆ Назад к началу</button>
+    <button class="consultation-button" data-lang="consultation">Заказать консультацию</button>
+    <button class="theme-toggle" data-lang="toggle-theme">Тема</button>
+
+    <!-- Модальные Окна (Пример) -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModalBtn">&times;</span>
+            <h2 data-lang="modal-title">Модальное Окно</h2>
+            <p data-lang="modal-content">Это пример модального окна. Здесь вы можете разместить дополнительную информацию или интерактивные элементы.</p>
+        </div>
+    </div>
+
+    <!-- Подключение JavaScript -->
+    <script src="scripts.js"></script>
+</body>
+</html>

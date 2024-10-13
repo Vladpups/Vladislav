@@ -1,0 +1,1857 @@
+/* ================================
+   Общие Стили
+================================ */
+
+/* Сброс отступов и полей для всех элементов */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основной шрифт и базовые цвета */
+body {
+    background-color: #000000; /* Черный фон */
+    color: #FFFFFF; /* Белый текст */
+    font-family: 'Roboto', Helvetica, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
+}
+
+/* Подключение шрифтов Montserrat, Playfair Display и Open Sans */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+/* Стили для ссылок */
+a {
+    color: #FFFFFF; /* Белый цвет ссылок */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #CCCCCC; /* Серый цвет при наведении */
+}
+
+/* Контейнер для центрального выравнивания контента */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Плавные переходы для всех элементов */
+* {
+    transition: all 0.3s ease;
+}
+
+/* ================================
+   Хеадер (Шапка сайта)
+================================ */
+
+/* Хеадер фиксирован в верхней части страницы */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #000000; /* Черный фон */
+    height: 100px; /* Высота хеадера */
+    display: flex;
+    align-items: center;
+    z-index: 1000;
+    transition: height 0.3s ease, background-color 0.3s ease;
+}
+
+/* Контейнер внутри хеадера для выравнивания элементов */
+.header-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Логотип */
+.logo img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.1); /* Эффект увеличения при наведении */
+}
+
+/* Меню навигации */
+.nav .nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Отступы между пунктами меню */
+}
+
+.nav .nav-menu li a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #FFFFFF; /* Белый текст */
+    transition: color 0.3s ease;
+}
+
+.nav .nav-menu li a:hover {
+    color: #CCCCCC; /* Серый цвет при наведении */
+}
+
+/* Контактная информация и переключатель языка */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Контактная информация */
+.contact-info a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #FFFFFF; /* Белый текст */
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #CCCCCC; /* Серый цвет при наведении */
+}
+
+/* Переключатель языка */
+.language-switcher .lang-btn {
+    background: none;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 3px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.language-switcher .lang-btn.active,
+.language-switcher .lang-btn:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+/* Иконка гамбургера для мобильных устройств */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.hamburger:hover {
+    color: #CCCCCC;
+}
+
+/* Боковое меню для мобильных устройств */
+.side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    right: 0;
+    background-color: #000000;
+    overflow-x: hidden;
+    transition: width 0.3s ease;
+    padding-top: 60px;
+}
+
+.side-menu .close-modal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 35px;
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.side-menu .close-modal:hover {
+    color: #CCCCCC;
+}
+
+.side-nav-menu {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.side-nav-menu li {
+    margin: 30px 0;
+}
+
+.side-nav-menu li a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+
+.side-nav-menu li a:hover {
+    color: #CCCCCC;
+}
+
+/* Анимация открытия бокового меню */
+.side-menu.open {
+    width: 250px;
+}
+
+/* ================================
+   Главная Секция (Hero Section)
+================================ */
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding-top: 100px; /* Чтобы хеадер не перекрывал контент */
+}
+
+.main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 64px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #FFFFFF;
+    animation: fadeIn 2s ease-in-out;
+    letter-spacing: 2px; /* Широкий кернинг */
+    max-width: 90%;
+}
+
+.main-title:hover {
+    text-shadow: 0 0 20px #FFFFFF, 0 0 30px #FFFFFF; /* Эффект свечения */
+}
+
+.main-image {
+    width: 250px;
+    height: auto;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    filter: blur(0px);
+    transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5); /* Световой контур */
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.main-image:hover {
+    filter: blur(2px);
+    box-shadow: 0 0 25px 5px rgba(255, 255, 255, 0.7);
+    transform: translateY(-10px); /* Эффект парения */
+}
+
+.subtitle {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    margin: 20px 0;
+    color: #FFFFFF;
+    animation: fadeIn 2s ease-in-out 1s;
+    max-width: 80%;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    border: 2px solid #FFFFFF;
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.cta-button:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    animation: bounce 2s infinite;
+    color: #FFFFFF;
+}
+
+.arrow {
+    border: solid #FFFFFF;
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+/* ================================
+   Блок "Обо мне" (About Me)
+================================ */
+
+.about-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #000000; /* Глубокий черный фон */
+}
+
+.about-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.about-section p {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* ================================
+   Галерея Работ (Collections Gallery)
+================================ */
+
+.collections-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #000000;
+}
+
+.collections-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.gallery::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+    border-radius: 4px;
+}
+
+.gallery-item {
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.7);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item .description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #FFFFFF;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease, background 0.3s ease;
+    text-align: left;
+}
+
+.gallery-item:hover .description {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.gallery-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 2px solid #FFFFFF;
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.gallery-button:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+/* ================================
+   Секция "Мои Услуги" (Services)
+================================ */
+
+.services-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #111111;
+}
+
+.services-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.service-card {
+    background-color: #1a1a1a;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.7);
+}
+
+.service-icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #FFFFFF;
+}
+
+.service-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.service-description {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+/* ================================
+   Секция "Отзывы клиентов" (Testimonials)
+================================ */
+
+.testimonials-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #000000;
+}
+
+.testimonials-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.testimonials-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: #1a1a1a;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.7);
+}
+
+.testimonial-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    object-fit: cover;
+    border: 2px solid #FFFFFF;
+}
+
+.testimonial-quote {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.testimonial-author {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+/* ================================
+   Секция "Новости и Обновления" (News)
+================================ */
+
+.news-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #111111;
+}
+
+.news-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.news-card {
+    background-color: #1a1a1a;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.7);
+}
+
+.news-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.news-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+}
+
+.news-description {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+
+/* ================================
+   Блок "Контакты" (Contact)
+================================ */
+
+.contact-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #000000;
+}
+
+.contact-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form label {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    background: #333333;
+    color: #FFFFFF;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+    transition: border 0.3s ease;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border: 1px solid #FFFFFF;
+    outline: none;
+}
+
+.contact-form .submit-button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: 2px solid #FFFFFF;
+    background: transparent;
+    color: #FFFFFF;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.contact-form .submit-button:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+/* Карта в разделе контактов */
+#map {
+    width: 100%;
+    height: 400px;
+    margin-top: 40px;
+    border: 2px solid #FFFFFF;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+#map:hover {
+    transform: scale(1.02);
+}
+
+/* ================================
+   Секция "Галерея Топ Работ" (Top Works)
+================================ */
+
+.top-works-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #111111;
+}
+
+.top-works-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.top-works-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.top-works-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.top-works-gallery::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+    border-radius: 4px;
+}
+
+.top-work-item {
+    min-width: 300px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.top-work-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.7);
+}
+
+.top-work-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.top-work-item:hover img {
+    transform: scale(1.1);
+}
+
+.top-work-item .description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #FFFFFF;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease, background 0.3s ease;
+    text-align: left;
+}
+
+.top-work-item:hover .description {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* ================================
+   Раздел "История успеха" (Success Story)
+================================ */
+
+.success-story-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #000000;
+}
+
+.success-story-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.success-story-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.success-story-card {
+    background-color: #1a1a1a;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.success-story-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.7);
+}
+
+.success-story-card .infographic {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.success-story-card .story-text {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    line-height: 1.8;
+}
+
+/* ================================
+   Блок "Мои Клиенты" (Clients)
+================================ */
+
+.clients-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #111111;
+}
+
+.clients-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.clients-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.client-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.client-logo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.7);
+}
+
+.client-logo img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+/* ================================
+   Блок "Цитаты и Вдохновение" (Quotes & Inspiration)
+================================ */
+
+.quotes-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #000000;
+    position: relative;
+}
+
+.quotes-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.quote {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin: 20px auto;
+    max-width: 800px;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.quote::before {
+    content: '"';
+    font-size: 24px;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+}
+
+.quote::after {
+    content: '"';
+    font-size: 24px;
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+}
+
+.quote:nth-child(odd) {
+    animation-delay: 0.5s;
+}
+
+.quote:nth-child(even) {
+    animation-delay: 1s;
+}
+
+/* ================================
+   Блок "Часто задаваемые вопросы" (FAQ)
+================================ */
+
+.faq-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #111111;
+}
+
+.faq-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #1a1a1a;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.faq-item:hover {
+    background: #333333;
+}
+
+.faq-question {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.faq-question::after {
+    content: '\f107'; /* Font Awesome иконка стрелки вниз */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(180deg); /* Поворот иконки при открытии */
+}
+
+.faq-answer {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-top: 10px;
+    display: none;
+    text-align: left;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* ================================
+   Секция "Планы на Будущее" (Future Plans)
+================================ */
+
+.future-plans-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #000000;
+}
+
+.future-plans-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.future-plans-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* ================================
+   Блок "Кнопка Назад к началу" (Back to Top)
+================================ */
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #000000;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    border: 2px solid #FFFFFF;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 1000;
+    display: none;
+}
+
+.back-to-top:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+/* ================================
+   Кнопка "Поделиться" (Share)
+================================ */
+
+.share-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #000000;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.share-button:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+/* ================================
+   Плавающие Кнопки для Взаимодействия
+================================ */
+
+.consultation-button {
+    position: fixed;
+    bottom: 80px;
+    left: 30px;
+    background: #000000;
+    color: #FFFFFF;
+    padding: 15px 20px;
+    border: 2px solid #FFFFFF;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 1000;
+}
+
+.consultation-button:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+/* ================================
+   Модальные Окна и Всплывающие Элементы
+================================ */
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 2500;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9); /* Черный фон с прозрачностью */
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #1a1a1a; /* Темно-серый фон */
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    color: #FFFFFF; /* Белый текст */
+    position: relative;
+    animation: fadeInModal 0.5s ease-in-out;
+}
+
+/* Кнопка закрытия модального окна */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #CCCCCC;
+}
+
+/* Анимация появления модального окна */
+@keyframes fadeInModal {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ================================
+   Интерактивные Элементы и Анимации
+================================ */
+
+/* Плавное появление */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Плавное появление вверх */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Эффект подпрыгивания */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Плавные анимации для кнопок и интерактивных элементов */
+button, .cta-button, .submit-button, .floating-button, .consultation-button, .theme-toggle, .share-button {
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+button:hover, .cta-button:hover, .submit-button:hover, .floating-button:hover, .consultation-button:hover, .theme-toggle:hover, .share-button:hover {
+    transform: scale(1.05);
+}
+
+/* Эффект появления карточек при прокрутке */
+.card-animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.card-animate.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================================
+   Медиа Запросы для Адаптивности
+================================ */
+
+/* Адаптивность для планшетов */
+@media (max-width: 1200px) {
+    .main-title {
+        font-size: 56px;
+    }
+
+    .subtitle {
+        font-size: 26px;
+    }
+
+    .nav .nav-menu li a {
+        font-size: 16px;
+    }
+}
+
+/* Адаптивность для планшетов и небольших экранов */
+@media (max-width: 992px) {
+    .main-title {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 24px;
+    }
+
+    .nav .nav-menu {
+        gap: 20px;
+    }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    /* Уменьшение высоты хеадера на мобильных */
+    header {
+        height: 80px;
+    }
+
+    /* Скрытие обычного меню и отображение гамбургера */
+    .nav {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    /* Изменение размеров элементов в главной секции */
+    .main-title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .cta-button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    /* Адаптация галереи */
+    .gallery, .top-works-gallery {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    /* Адаптация формы контактов */
+    .contact-form {
+        padding: 0 10px;
+    }
+
+    /* Плавающая кнопка для связи */
+    .floating-button {
+        padding: 12px 16px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    /* Карта */
+    #map {
+        height: 300px;
+    }
+}
+
+/* Адаптивность для очень маленьких экранов */
+@media (max-width: 576px) {
+    .main-title {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .nav .nav-menu li a {
+        font-size: 14px;
+    }
+
+    .gallery, .top-works-gallery {
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+
+    #map {
+        height: 250px;
+    }
+
+    /* Плавающая форма подписки */
+    .floating-subscription {
+        bottom: 80px;
+        left: 20px;
+        right: 20px;
+    }
+}
+
+/* ================================
+   Секция "FAQ" (Часто задаваемые вопросы)
+================================ */
+
+.faq-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #111111;
+}
+
+.faq-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: #1a1a1a;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.faq-item:hover {
+    background: #333333;
+}
+
+.faq-question {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    position: relative;
+}
+
+.faq-question::after {
+    content: '\f107'; /* Font Awesome иконка стрелки вниз */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(180deg); /* Поворот иконки при открытии */
+}
+
+.faq-answer {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin-top: 10px;
+    display: none;
+    text-align: left;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* ================================
+   Секция "Планы на Будущее" (Future Plans)
+================================ */
+
+.future-plans-section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #000000;
+}
+
+.future-plans-section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF;
+}
+
+.future-plans-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 18px;
+    color: #FFFFFF;
+    line-height: 1.8;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* ================================
+   Секция "Отзывы" (Testimonials)
+================================ */
+
+/* Уже покрыто выше */
+
+/* ================================
+   Кнопка "Назад к началу" (Back to Top)
+================================ */
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #000000;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    border: 2px solid #FFFFFF;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 1000;
+    display: none;
+}
+
+.back-to-top:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+/* ================================
+   Кнопка "Поделиться" (Share)
+================================ */
+
+.share-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #000000;
+    color: #FFFFFF;
+    padding: 8px 12px;
+    border: 2px solid #FFFFFF;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.share-button:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+/* ================================
+   Темные и Светлые Темы
+================================ */
+
+/* Темная тема (по умолчанию) */
+body.dark-theme {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+body.dark-theme header,
+body.dark-theme .side-menu,
+body.dark-theme .about-section,
+body.dark-theme .collections-section,
+body.dark-theme .services-section,
+body.dark-theme .testimonials-section,
+body.dark-theme .news-section,
+body.dark-theme .contact-section,
+body.dark-theme .top-works-section,
+body.dark-theme .success-story-section,
+body.dark-theme .clients-section,
+body.dark-theme .quotes-section,
+body.dark-theme .faq-section,
+body.dark-theme .future-plans-section {
+    background-color: #000000;
+}
+
+body.dark-theme .nav .nav-menu li a,
+body.dark-theme .side-nav-menu li a,
+body.dark-theme .contact-info a,
+body.dark-theme .social-links a,
+body.dark-theme .service-title,
+body.dark-theme .service-description,
+body.dark-theme .testimonial-quote,
+body.dark-theme .testimonial-author,
+body.dark-theme .news-title,
+body.dark-theme .news-description,
+body.dark-theme .success-story-content,
+body.dark-theme .future-plans-content,
+body.dark-theme .clients-gallery img,
+body.dark-theme .faq-question,
+body.dark-theme .faq-answer,
+body.dark-theme .quotes-section .quote {
+    color: #FFFFFF;
+}
+
+body.dark-theme .nav .nav-menu li a:hover,
+body.dark-theme .side-nav-menu li a:hover,
+body.dark-theme .contact-info a:hover,
+body.dark-theme .social-links a:hover {
+    color: #CCCCCC;
+}
+
+body.dark-theme .language-switcher .lang-btn {
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+body.dark-theme .language-switcher .lang-btn.active,
+body.dark-theme .language-switcher .lang-btn:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+body.dark-theme .hamburger {
+    color: #FFFFFF;
+}
+
+body.dark-theme .hamburger:hover {
+    color: #CCCCCC;
+}
+
+body.dark-theme .side-nav-menu li a {
+    color: #FFFFFF;
+}
+
+body.dark-theme .side-nav-menu li a:hover {
+    color: #CCCCCC;
+}
+
+/* Светлая тема */
+body.light-theme {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+body.light-theme header,
+body.light-theme .side-menu,
+body.light-theme .about-section,
+body.light-theme .collections-section,
+body.light-theme .services-section,
+body.light-theme .testimonials-section,
+body.light-theme .news-section,
+body.light-theme .contact-section,
+body.light-theme .top-works-section,
+body.light-theme .success-story-section,
+body.light-theme .clients-section,
+body.light-theme .quotes-section,
+body.light-theme .faq-section,
+body.light-theme .future-plans-section {
+    background-color: #FFFFFF;
+}
+
+body.light-theme .nav .nav-menu li a,
+body.light-theme .side-nav-menu li a,
+body.light-theme .contact-info a,
+body.light-theme .social-links a,
+body.light-theme .service-title,
+body.light-theme .service-description,
+body.light-theme .testimonial-quote,
+body.light-theme .testimonial-author,
+body.light-theme .news-title,
+body.light-theme .news-description,
+body.light-theme .success-story-content,
+body.light-theme .future-plans-content,
+body.light-theme .clients-gallery img,
+body.light-theme .faq-question,
+body.light-theme .faq-answer,
+body.light-theme .quotes-section .quote {
+    color: #000000;
+}
+
+body.light-theme .nav .nav-menu li a:hover,
+body.light-theme .side-nav-menu li a:hover,
+body.light-theme .contact-info a:hover,
+body.light-theme .social-links a:hover {
+    color: #666666;
+}
+
+body.light-theme .language-switcher .lang-btn {
+    border: 1px solid #000000;
+    color: #000000;
+}
+
+body.light-theme .language-switcher .lang-btn.active,
+body.light-theme .language-switcher .lang-btn:hover {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+body.light-theme .hamburger {
+    color: #000000;
+}
+
+body.light-theme .hamburger:hover {
+    color: #666666;
+}
+
+body.light-theme .side-nav-menu li a {
+    color: #000000;
+}
+
+body.light-theme .side-nav-menu li a:hover {
+    color: #666666;
+}
+
+/* Переход между темами */
+.theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: #000000;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    border: 2px solid #FFFFFF;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+body.light-theme .theme-toggle {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+body.light-theme .theme-toggle:hover {
+    background: #000000;
+    color: #FFFFFF;
+}
+
+/* ================================
+   Дополнительные Стили и Эффекты
+================================ */
+
+/* Световой контур вокруг изображения */
+.main-image {
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.5);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Градиентное исчезновение */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    z-index: -1;
+}
+
+/* Эффект парения изображения при прокрутке */
+body.scrolled .main-image {
+    transform: translateY(-10px);
+}
+
+/* Плавный переход фокуса от изображения к заголовку */
+.hero-section {
+    animation: focusTransition 2s ease-in-out;
+}
+
+@keyframes focusTransition {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 1; }
+}
+
+/* Добавление глубины с помощью тени */
+.main-image::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5));
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+/* ================================
+   Медиа Запросы для Адаптивности
+================================ */
+
+/* Уже включены выше */
+
+/* ================================
+   Дополнительные Интерактивные Элементы
+================================ */
+
+/* Плавающие кнопки для взаимодействия */
+.floating-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #000000;
+    color: #FFFFFF;
+    padding: 15px 20px;
+    border: 2px solid #FFFFFF;
+    border-radius: 50px;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    z-index: 1000;
+}
+
+.floating-button:hover {
+    background: #FFFFFF;
+    color: #000000;
+}
+
+/* ================================
+   Интерактивная Прокрутка Галереи (Horizontal Scroll)
+================================ */
+
+/* Галерея Топ Работ */
+.top-works-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-behavior: smooth;
+}
+
+.top-works-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+
+.top-works-gallery::-webkit-scrollbar-thumb {
+    background: #FFFFFF;
+    border-radius: 4px;
+}
+
+/* ================================
+   Плавное Появление Изображений при Прокрутке
+================================ */
+
+/* Используя Intersection Observer, классы .card-animate активируются через JS */
+
+/* ================================
+   Заключение
+================================ */
+
+/* Добавьте дополнительные стили ниже по мере необходимости */
+/* ОСНОВНОЙ СТИЛЬ СКРОЛЛБАРА */
+::-webkit-scrollbar {
+    width: 14px; /* Ширина для удобного взаимодействия */
+    height: 14px;
+    background: rgba(0, 0, 0, 0); /* Полностью прозрачный фон, когда не используется */
+}
+
+/* СТИЛЬ ПОЛЗУНКА С ФУТУРИСТИЧЕСКИМ ЭФФЕКТОМ */
+::-webkit-scrollbar-thumb {
+    background: conic-gradient(from 180deg, #7f7f7f, #1f1f1f, #0a0a0a, #7f7f7f); /* Эффект вращения цвета */
+    border-radius: 12px; /* Скруглённые углы для стильности */
+    border: 3px solid rgba(255, 255, 255, 0.1); /* Лёгкий прозрачный обод */
+    background-clip: padding-box;
+    transition: background 0.6s ease-in-out, transform 0.3s ease, box-shadow 0.4s ease; /* Супер плавные анимации */
+    box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.2), 0 0 10px rgba(0, 0, 0, 0.6); /* Объёмные тени */
+}
+
+/* АНИМАЦИИ ПРИ НАВЕДЕНИИ */
+::-webkit-scrollbar-thumb:hover {
+    background: conic-gradient(from 45deg, #b5b5b5, #525252, #1a1a1a, #b5b5b5); /* Изменение градиента для интерактивности */
+    transform: scale(1.2); /* Ползунок увеличивается для удобного захвата */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 255, 255, 0.3); /* Сияние для эффекта наведения */
+    cursor: pointer;
+}
+
+/* ЭФФЕКТ ПРИ КЛИКЕ */
+::-webkit-scrollbar-thumb:active {
+    background: radial-gradient(circle, #ff5555, #7f7f7f); /* Цвет меняется на красный */
+    transform: scale(1.1); /* Немного уменьшение после клика для реализма */
+    transition: transform 0.1s ease; /* Быстрая реакция */
+    box-shadow: 0 0 25px rgba(255, 85, 85, 0.8); /* Красивое свечение при клике */
+}
+
+/* ТРЕК (TRACK) — С МЯГКОЙ АНИМАЦИЕЙ */
+::-webkit-scrollbar-track {
+    background: linear-gradient(180deg, #0d0d0d, #262626); /* Темный и элегантный фон трека */
+    border-radius: 12px;
+    margin: 2px; /* Лёгкий отступ для аккуратного вида */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Глубокая тень внутри трека */
+    transition: background 0.3s ease; /* Анимация фона при взаимодействии */
+}
+
+/* ТРЕК ПРИ ПРОКРУТКЕ (ДИНАМИЧЕСКИЙ ФОН) */
+::-webkit-scrollbar-track:hover {
+    background: linear-gradient(180deg, #1a1a1a, #333333); /* Легкое осветление фона */
+}
+
+/* СКРЫТИЕ СКРОЛЛБАРА ПРИ ОТСУТСТВИИ ПРОКРУТКИ */
+::-webkit-scrollbar-track:empty {
+    display: none;
+}
+
+/* ПОДДЕРЖКА FIREFOX */
+* {
+    scrollbar-width: thin; /* Тонкий скроллбар */
+    scrollbar-color: #7f7f7f #0d0d0d; /* Цвета ползунка и трека */
+}
+
+/* ПЛАВНЫЙ СКРОЛЛ ДЛЯ УЛУЧШЕННОГО UX */
+html {
+    scroll-behavior: smooth;
+}
+
+/* АНИМАЦИЯ ВО ВРЕМЯ ПРОКРУТКИ С ПОЯВЛЕНИЕМ */
+.scrollbar-container:hover ::-webkit-scrollbar {
+    background: rgba(0, 0, 0, 0.3); /* Лёгкая прозрачность при наведении */
+    transition: background 0.2s ease-in-out; /* Плавное появление */
+}
+
+/* ПРИМЕР СКРЫТОГО СКРОЛЛБАРА */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Полное скрытие */
+}
+
+/* ГЛОБАЛЬНЫЕ ТРАНЗИЦИИ */
+body {
+    overflow-y: scroll;
+    transition: background 0.5s, color 0.5s; /* Плавные переходы фона и цвета */
+}
